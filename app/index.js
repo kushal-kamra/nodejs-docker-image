@@ -1,8 +1,12 @@
 const app = require("express")();
+const appid = process.env.APPID;
 
-app.get("/", (req, res) => res.send("Hello from container!"));
+app.get("/", (req, res) => res.send(`Hello from ${appid} container!`));
+app.get("/app1", (req, res) => res.send(`Hello from ${appid} app1!`));
+app.get("/app2", (req, res) => res.send(`Hello from ${appid} app2!`));
+app.get("/admin", (req, res) => res.send(`Hello from ${appid} ADMIN page! Restricted page`));
 
-app.listen(9999, () => console.log("listening on 9999"));
+app.listen(9999, () => console.log(`${appid} listening on 9999`));
 
 // To build
 // docker build -t nodeapp .
