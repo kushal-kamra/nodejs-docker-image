@@ -13,6 +13,9 @@ app.listen(9999, () => console.log("listening on 9999"));
 // To just run the container image
 // docker run -d -p 8000:9999 nodeapp
 
+// To run detached with app id
+// docker run -p 2222:9999 -e APPID=2222 -d nodeapp
+
 // To stop container
 // docker stop nodeappsrvr1
 
